@@ -7,3 +7,7 @@ class Solution(object):
         """
         
         
+        
+t = Solution()
+t.isAnagram(s = "anagram", t = "nagaram")
+t.isAnagram(s = "anagram", t = "iagaram")
