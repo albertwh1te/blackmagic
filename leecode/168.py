@@ -4,16 +4,13 @@ class Solution(object):
         :type n: int
         :rtype: str
         """
-        characters = "abcdefghijklmnopqrstuvwxyz"
         result = ""
-        while n >= 27:
-            result += characters[n % 26-1]
-            n /= 26
-        if n < 27:
-            result = characters[n % 26-1] + result
-            return result.upper()
-                
-                
+        while n > 0:
+            result = chr(ord("A") + (n - 1) % 26) + result
+            n = (n-1) / 26
+        return result
+            
+            
                 
 
 
