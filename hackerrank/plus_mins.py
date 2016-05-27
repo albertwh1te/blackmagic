@@ -17,15 +17,16 @@
 #     return True
 # 
 # solution()
-# time = "07:05:45PM"
-# def solution():
-#     true_time  = time[:-2]
-#     [hh, mm, ss] = true_time.split(':')
-#     if "PM" in time:
-#         hh = str(int(hh) + 12)
-#     print ":".join([hh, mm, ss])
-#     return True
-# solution()
+time = "12:05:45AM"
+def solution():
+    true_time  = time[:-2]
+    [hh, mm, ss] = true_time.split(':')
+    if "PM" in time:
+        if int(hh) == 12:
+            hh = "00"
+        else:
+            hh = str(int(hh) + 12)
+    print ":".join([hh, mm, ss])
+    return True
+solution()
 
-        
-    

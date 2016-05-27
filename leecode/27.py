@@ -6,9 +6,9 @@ class Solution(object):
         :rtype: int
         """
         if val in nums:
-            while  val in nums:
+            while val in nums:
                 nums.remove(val)
         return len(nums)
-                
+    
 t = Solution()
-print t.removeElement([3,3,2,3],3)    
+print t.removeElement([3, 3, 2, 3], 3)   
