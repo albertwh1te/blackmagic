@@ -1,7 +1,7 @@
 from Queue import Queue
 from threading import Thread
 import requests
-import time
+#  import time
 
 
 hosts = ["https://www.baidu.com/", "https://stackoverflow.com/#", "https://github.com/"]
@@ -19,18 +19,9 @@ class RequestWithThread(Thread):
         print url.title
         self.queue.task_done()
 
-start = time.time()
-def main():
-    for i in range(5):
+
+#  start = time.time()
+#  def main():
+    #  for i in range(5):
+        
     
-
-        
-        
-
-        
-        
-        
-                
-
-
-
