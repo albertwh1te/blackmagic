@@ -1,0 +1,151 @@
+{% extends "commons/base.html" %}
+{% load static %}
+{% block navs %}
+    <li>
+        <a href="/commons/index.html">主页</a>
+    </li>
+{% endblock %}
+
+{% block js %}
+<script src="{% static "commons/js/vms/signup.js" %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block main %}
+
+        <div class="section">
+            <div class="background-image"></div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                            <div class="col-lg-6 col-md-7 col-sm-8 col-xs-9">
+                                <form id="signup-form" action="/api/users/profiles/signup/" class="form-horizontal" method="post" enctype='multipart/form-data'>{% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="account-type" class="control-label">类型</label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.userType$}</h6>
+                                            <label class="checkbox-inline">
+                                                <input type="radio" name="userType" id="student" value="1"
+                                                       checked="">学生</label>
+                                            <label class="checkbox-inline">
+                                                <input type="radio" name="userType" id="broker" value="2">房东/中介</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="nickName" class="control-label">昵称
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.nickName$}</h6>
+                                            <input type="search" class="form-control" name="nickName"
+                                                   placeholder="请输入您的昵称（公开信息）">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                            <label for="gender" class="control-label">性别</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <label class="checkbox-inline">
+                                                <input type="radio" name="gender" id="male" value="1"
+                                                       checked="">男</label>
+                                            <label class="checkbox-inline">
+                                                <h6 class="text-danger">{$ errors.gender$}</h6>
+                                                <input type="radio" name="gender" id="female" value="2">女</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                                            <p>头像</p>
+                                            <div class="img-buttons">
+                                              <div class="btn btn-primary btn-file"> 
+                                                  上传
+                                                  <input id="headIcon" name="headIcon" type="file" onchange="preImg(this.id,'headIcon-preview');">
+                                              </div>              
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                            <h6 class="text-danger">{$ errors.image$}</h6>
+                                            <img id="headIcon-preview" src="{% static "commons/images/placeholder.png" %}"
+                                                 class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="nickname" class="control-label">专业
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.major$}</h6>
+                                            <input type="search" class="form-control" name="major"
+                                                   placeholder="请输入您的专业名称">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="introduction" class="control-label">爱好
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.interests$}</h6>
+                                            <input type="search" class="form-control" name="interests"
+                                                   placeholder="请输入您的爱好，以逗号、分号或空格隔开">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="email" class="control-label">Email</label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.email$}</h6>
+                                            <input type="email" class="form-control" name="email" placeholder="请输入Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="password" class="control-label">密码</label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.password$}</h6>
+                                            <input type="password" class="form-control" name="password"
+                                                   placeholder="请输入密码">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="passwordAgain" class="control-label"
+                                                   >确认</label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h6 class="text-danger">{$ errors.passwordAgain$}</h6>
+                                            <input type="password" class="form-control" name="passwordAgain"
+                                                   placeholder="请再次输入密码">
+                                        </div>
+                                    </div>
+                                <ul class="pager">
+                                    <li>
+                                        <button type="button" class="btn btn-default" onclick="window.open('/')">取消</button>
+                                    </li>
+                                    <li>
+                                        <input type="submit" id="submit" class="btn btn-warning" value="提交">
+                                    </li>
+                                </ul>
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-3 col-sm-2 col-xs-1"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

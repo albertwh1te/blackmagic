@@ -1,0 +1,24 @@
+{% extends "commons/base.html"%}
+                        {% block navs %}
+                        <li>
+                            <a href="/commons/index.html">主页</a>
+                        </li>
+                        {% endblock %}
+
+    {%block main%}
+    <div class="section">
+      <div class="background-image"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>邮箱验证</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>验证链接已经发送至邮箱，请查收并点击链接完成注册。谢谢！</p>
+          </div>
+        </div><div class="row"><div class="col-md-12"><a class="btn btn-primary" href="/">返回主页</a></div></div>
+      </div>
+    </div>
+    {%endblock%}

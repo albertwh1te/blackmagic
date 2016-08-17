@@ -1,0 +1,101 @@
+{% extends "commons/base.html"%}
+                        {% block navs %}
+                        <li>
+                            <a href="/commons/index.html">退出</a>
+                        </li>
+                        {% endblock %}
+
+    {%block main%}
+    <div class="section">
+      <div class="container">
+{% include "users/include/user-info.html" %}
+{% include "commons/include/menu.html" %}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2 class="text-center">普通用户</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive" data-toggle="modal" data-target="#detail"></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <ul class="list-group">
+                          <li class="list-group-item">一次可提交1分入驻申请</li>
+                          <li class="list-group-item">有合适房源发布三天后邮件提醒</li>
+                          <li class="list-group-item">可同时发布1个房源</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 text-left">
+                        <h1 class="margin0 text-left">$0</h1>
+                      </div>
+                      <div class="col-md-6">
+                        <a class="btn btn-block btn-lg btn-success disabled" data-toggle="modal" data-target="#payment">已购买</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2 class="text-center">VIP-1年</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive" data-toggle="modal" data-target="#detail"></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <ul class="list-group">
+                          <li class="list-group-item">一次可提交多份入驻申请</li>
+                          <li class="list-group-item">有合适房源第一时间邮件提醒</li>
+                          <li class="list-group-item">可同时发布3个房源</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 text-left">
+                        <h1 class="margin0 text-left">$10</h1>
+                      </div>
+                      <div class="col-md-6">
+                        <a class="btn btn-block btn-lg btn-primary" data-toggle="modal" data-target="#payment">购买</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+    {%block modal%}
+    <div class="modal fade" id="payment">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center">购买确认</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+              <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+              <br>Ut enim ad minim veniam, quis nostrud</p>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-default" data-dismiss="modal">取消</a>
+            <a class="btn btn-danger">确认购买</a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

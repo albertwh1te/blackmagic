@@ -1,0 +1,62 @@
+{% extends "commons/base.html"%}
+                        {% block navs %}
+                        <li>
+                            <a href="/commons/index.html">退出</a>
+                        </li>
+                        {% endblock %}
+
+    {%block main%}
+    <div class="section">
+      <div class="container">
+{% include "users/include/user-info.html" %}
+{% include "commons/include/menu.html" %}
+        <div class="row">
+          <div class="col-md-12">
+            <a class="btn btn-default">全部</a>
+            <a class="btn btn-success">未读</a>
+            <a class="btn btn-warning">已读</a>
+            <a class="btn btn-info">标为已读</a>
+            <a class="btn btn-danger">删除</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="list-group">
+                      <li class="list-group-item" data-toggle="modal" data-target="#detail">Cras justo odio</li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#detail">Dapibus ac facilisis in</li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#detail">Morbi leo risus</li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#detail">Porta ac consectetur ac</li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#detail">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{%block modal%}
+    <div class="modal fade" id="detail">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center">消息详情</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+              <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+              <br>Ut enim ad minim veniam, quis nostrud</p>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-danger pull-left">删除</a>
+            <a class="btn btn-default" data-dismiss="modal">关闭</a>
+            <a class="btn btn-primary">标为未读</a>
+          </div>
+        </div>
+      </div>
+    </div>
+{%endblock%}

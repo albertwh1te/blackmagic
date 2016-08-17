@@ -1,0 +1,152 @@
+{% extends "commons/base.html"%}
+{% load static %}
+
+                        {% block navs %}
+                        <li>
+                            <a href="/commons/index.html">退出</a>
+                        </li>
+                        {% endblock %}
+
+    {% block main %}
+        <div class="section">
+            <div class="container">
+{% include "users/include/user-info.html"%}
+{% include "commons/include/menu.html" %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-default">按价格<i class="fa fa-fw fa-sort"></i></a>
+                        <a class="btn btn-default">按距离<i class="fa fa-fw fa-sort"></i></a>
+                        <a class="btn btn-default">按时间<i class="fa fa-fw fa-sort"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>2012-06-27</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h2>$2400</h2>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h2>24mins</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive" data-toggle="modal" data-target="#detail"></a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3>0000 00 SW 00 ST, Miami, FL, 33146</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 text-left">
+                                                <h2 class="margin0 text-left">2室2卫</h2>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a class="btn btn-block btn-lg btn-primary" data-target="#detail" data-toggle="modal">详情</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block modal %}
+        <div class="modal fade" id="detail">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{%static "commons/images/head_portrait.jpg"%}" class="center-block img-circle img-responsive">
+                                <h3 class="text-center">发布者</h3>
+                                <h3 class="text-center">John Doe</h3>
+                                <p class="text-center">信誉：+9</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#"><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive"></a>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>该公寓位于XXXX SW XX ST, Miami, FL, 33146; 户型为3室2卫；起租时间为 2016年6月12日；租期为长租；月租为$2400；押金为$3600；无家具；宠物可商量。设施包括：WiFi、水、电、室内洗衣设施。</h2>
+                            </div>
+                        </div>
+                        <h2 class="text-center">当前室友</h2>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{%static "commons/images/head_portrait.jpg"%}" class="center-block img-circle img-responsive">
+                                <h3 class="text-center">John Doe</h3>
+                                <p class="text-center">物理系</p>
+                                <p class="text-center">信誉：+9</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{%static "commons/images/head_portrait.jpg"%}" class="center-block img-circle img-responsive">
+                                <h3 class="text-center">John Doe</h3>
+                                <p class="text-center">计算机系</p>
+                                <p class="text-center">信誉：+9</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{%static "commons/images/head_portrait.jpg"%}" class="center-block img-circle img-responsive">
+                                <h3 class="text-center">John Doe</h3>
+                                <p class="text-center">经管系</p>
+                                <p class="text-center">信誉：+9</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive"></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <span>类型：主卧</span>
+                                        </p>
+                                        <p>
+                                            <span>月租：650/人</span>
+                                        </p>
+                                        <p>
+                                            <span>押金：500/人</span>
+                                        </p>
+                                        <p>
+                                            <span>申请者/容量：4/1</span>
+                                        </p>
+                                        <p>
+                                            <span>洗手间：独立</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <a class="btn btn-primary">申请入住</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-default" data-dismiss="modal">关闭</a>
+                        <a class="btn btn-danger">取消收藏</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+</body></html>
