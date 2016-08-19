@@ -1,0 +1,6 @@
+{% load category_tags %}  
+{% if categories %}</pre>  
+<ul>{% for cate in categories %}  
+	<li>{{ cate.title }} {% category_tree cate %}</li>  
+	{% endfor %}</ul>  
+<pre class="brush:xml;">{% endif %} 

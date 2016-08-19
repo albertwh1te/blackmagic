@@ -1,0 +1,23 @@
+{% extends "commons/base.html" %}
+{% load static %}
+{% block main %}
+this is menu
+{% verbatim %}    
+
+<div id="app">
+	  <ul>
+		      <li v-for="todo in todos">
+			            {{ todo.text }}
+			            {{ todo.cc }}
+				        </li>
+					  </ul>
+</div>
+{% endverbatim %}
+
+
+
+
+{% endblock %}
+{%block js%}
+	    <script src="{% static "commons/js/vms/menu.js" %}" type="text/javascript"></script>
+{%endblock%}
