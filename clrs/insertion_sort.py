@@ -1,4 +1,6 @@
 # coding:utf-8
+# time complexity O(n)
+# sapce complexity O(n)
 
 
 def insertion_sort(arr):
