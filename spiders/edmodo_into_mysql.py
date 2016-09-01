@@ -1,5 +1,4 @@
 # coding:utf-8
-# coding:utf-8
 # this scripts should run under python3 environments
 
 import requests
@@ -16,10 +15,10 @@ Base = declarative_base()
 class Posts(Base):
     __tablename__ = 'posts'
     id = Column(Integer, primary_key=True)
-    title = Column(String(100),nullable=True)
+    title = Column(String(300),nullable=True)
     url = Column(String(500),nullable=True)
-    key_words = Column(String(100),nullable=True)
-    post_time = Column(String(100),nullable=True)
+    key_words = Column(String(300),nullable=True)
+    post_time = Column(String(300),nullable=True)
     content = Column(Text(),nullable=True)
     
 
@@ -29,7 +28,7 @@ class Posts(Base):
 
 #  create table
 #  engine = create_engine('sqlite:///edmodo.db')
-engine = create_engine('mysql+mysqldb://root:8354210@127.0.0.1/edmodo')
+engine = create_engine('mysql+mysqldb://root:8354210@127.0.0.1/edmodo',connect_args={'charset':'utf8mb4'})
 Base.metadata.create_all(engine)
 
 
