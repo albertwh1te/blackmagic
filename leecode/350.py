@@ -5,15 +5,14 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        new_arr = []
-        for i in range(len(nums1)):
-            for j in range(len(nums2)):
-                if nums1[i] == nums2[j]:
-                    print nums1, nums2,new_arr
-                    new_arr.append(nums2[1])
-                    nums2[j] = nums1[j] = 0 
-        return new_arr
-
+        results = []
+        for i in nums1:
+            if i in nums2:
+                nums2.remove(i)
+                results.append(i)
+        return results
+                
+            
 nums1=[1,3,4,5]
 nums2=[3,4]
 test = Solution()
