@@ -1,0 +1,10 @@
+* learn org mode
+** DONE learn org with GTD
+CLOSED: [2016-09-28 Wed 21:26]
+** TODO learn org with ganda
+** TODO try to go though
+* learn racket
+** DONE basic kedwlodge
+CLOSED: [2016-09-28 Wed 21:26]
+** TODO sicp with racket
+
