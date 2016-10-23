@@ -20,7 +20,7 @@
         (cons
           (/(+ (car (car v)) (car (cdr v))) 2)
           (/(+ (cdr (car v)) (cdr (cdr v))) 2)))
-          
+(define a 3)
 
 
 
