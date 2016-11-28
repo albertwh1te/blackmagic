@@ -26,7 +26,8 @@ function inverse_hash(key) {
     key = key^tmp>>28;
 
     // Invert key *= 21
-    key *= 14933078535860113213u;
+    // key *= 14933078535860113213u;
+    key *= 14933078535860113213;
 
     // Invert key = key ^ (key >> 14)
     tmp = key^key>>14;
@@ -35,7 +36,8 @@ function inverse_hash(key) {
     key = key^tmp>>14;
 
     // Invert key *= 265
-    key *= 15244667743933553977u;
+    // key *= 15244667743933553977u;
+    key *= 15244667743933553977;
 
     // Invert key = key ^ (key >> 24)
     tmp = key^key>>24;
