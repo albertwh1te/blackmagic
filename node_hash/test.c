@@ -48,5 +48,6 @@ uint32_t jenkins_rev_unmix32(uint32_t key) {
 }
 void main(){
   printf("%" PRIu32 "\n", jenkins_rev_mix32(10));
+  printf("%" PRIu32 "\n", UINT32_MAX);
   printf("%" PRIu32, jenkins_rev_unmix32(jenkins_rev_mix32(10)));
 }

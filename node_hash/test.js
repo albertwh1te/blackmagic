@@ -1,25 +1,16 @@
 var bigInt = require("big-integer");
 
 function j_hash(key) {
-    // key += (key << 12);  // key *= (1 + (1 << 12))
-    key = bigInt(key);
-    key = key.plus(key.shiftLeft(12));
-    key = key.xor(key.shiftRight(22));
-    // key ^= (key >> 22);
-    // key += (key << 4);   // key *= (1 + (1 << 4))
-    key = key.plus(key.shiftLeft(4));
-    // key ^= (key >> 9);
-    key = key.xor(key.shiftRight(9));
-    // key += (key << 10);  // key *= (1 + (1 << 10))
-    key = key.plus(key.shiftLeft(10));
-    // key ^= (key >> 2);
-    key = key.xor(key.shiftRight(2));
+    key += (key << 12);  // key *= (1 + (1 << 12))
+    key ^= (key >> 22);
+    key += (key << 4);   // key *= (1 + (1 << 4))
+    key ^= (key >> 9);
+    key += (key << 10);  // key *= (1 + (1 << 10))
+    key ^= (key >> 2);
     // key *= (1 + (1 << 7)) * (1 + (1 << 12))
-    // key += (key << 7);
-    key = key.plus(key.shiftLeft(7));
-    // key += (key << 12);
-    key = key.plus(key.shiftLeft(12));
-    return key.toString();
+    key += (key << 7);
+    key += (key << 12);
+    return key
 }
 console.log(j_hash(10));
 function j_rehash(key) {
