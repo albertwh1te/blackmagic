@@ -1,3 +1,3 @@
 #! /usr/bin
 
-mongo --shell  --port 4910 --host 192.168.10.219
+mongo  --port 49019 --host 192.168.10.219
