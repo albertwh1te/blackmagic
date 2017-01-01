@@ -35,6 +35,7 @@ import codecs
 import os
 from os.path import abspath, dirname, join
 import subprocess
+import io
 
 try:
     from collections import OrderedDict
@@ -75,9 +76,9 @@ class CompileOrgmode(PageCompiler):
                 post = self.site.post_per_input_file[source]
             except KeyError:
                 post = None
-            with open(dest, 'r', encoding='utf-8') as inf:
+            with io.open(dest, 'r',encoding='utf-8') as inf:
                 output, shortcode_deps = self.site.apply_shortcodes(inf.read(), with_dependencies=True)
-            with open(dest, 'w', encoding='utf-8') as outf:
+            with io.open(dest, 'w', encoding='utf-8') as outf:
                 outf.write(output)
             if post is None:
                 if shortcode_deps:

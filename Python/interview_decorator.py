@@ -7,11 +7,13 @@ def limit_fun_times(func):
         if i < 10:
             func
             print "now render {func_name} {render_time} times".format(
-                                                            func_name=func.__name__, 
+                                                            func_name=func.
+                                                            __name__,
                                                             render_time=i
             )
             i += 1
     return _wrapper
+
 
 @limit_fun_times
 def test_func():
@@ -19,4 +21,3 @@ def test_func():
 
 test_func()
 #  a = map(test_func,[1,2,3])
-    

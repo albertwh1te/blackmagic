@@ -132,16 +132,27 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 #          with a ``/``, otherwise end them with ``/index.html`` — or
 #          else they won’t be highlighted when active.
 
+# NAVIGATION_LINKS = {
+#     DEFAULT_LANG: (
+#         ("/archive.html", "文章存档"),
+#         ("/categories/", "标签"),
+#         ("/rss.xml", "RSS 源"),
+#     ),
+# }
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "文章存档"),
-        ("/categories/", "标签"),
-        ("/rss.xml", "RSS 源"),
-    ),
+        ('/index.html', 'Home', 'icon-home'),
+        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
+        ('/categories/index.html', 'Tags', 'icon-tags'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
+        ('https://getnikola.com', 'About me', 'icon-user'),
+        ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
+        ('https://github.com/getnikola', 'My Github', 'icon-github'),
+    )
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "zen-jinja"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.

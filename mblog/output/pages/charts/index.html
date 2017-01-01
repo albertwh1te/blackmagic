@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Charts | markwh1te</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bitter.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/main.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://example.com/pages/charts/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="mark">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="mark">
+<meta property="og:site_name" content="markwh1te">
+<meta property="og:title" content="Charts">
+<meta property="og:url" content="https://example.com/pages/charts/">
+<meta property="og:description" content="If you are using reStructuredText and install pygal, Nikola has support for rather nice charts
+with little effort, and i's even semi-interactive (hover your pointer over the legend!):
+.. chart:: Stack">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-08-27T18:20:55-03:00">
+<meta name="author" content="mark">
 <meta property="og:site_name" content="markwh1te">
 <meta property="og:title" content="Charts">
 <meta property="og:url" content="https://example.com/pages/charts/">
@@ -23,77 +33,36 @@ with little effort, and i's even semi-interactive (hover your pointer over the l
 <meta property="article:published_time" content="2013-08-27T18:20:55-03:00">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://getnikola.com" title="About me"><i class="icon-user"></i></a></li>
+            <li><a href="https://twitter.com/getnikola" title="My Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/getnikola" title="My Github"><i class="icon-github"></i></a></li>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://example.com/">
-
-                <span id="blog-title">markwh1te</span>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../archive.html">文章存档</a>
-                </li>
-<li>
-<a href="../../categories/">标签</a>
-                </li>
-<li>
-<a href="../../rss.xml">RSS 源</a>
-
-                
-            </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="index.txt" id="sourcelink">源代码</a>
-    </li>
-
-                
-            </ul>
-</div>
-<!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        <div class="row">
-            
-            
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Charts</a></h1>
+        </ul></section><section class="page-content"><div class="content" rel="main">
+<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name">Charts</h1>
 
         
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
+    </header><div itemprop="articleBody text">
     <div>
 <p>If you are using reStructuredText and install pygal, Nikola has support for rather nice charts
 with little effort, and i's even semi-interactive (hover your pointer over the legend!):</p>
-<pre class="code rest"><a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-1"></a><span class="p">..</span> <span class="ow">chart</span><span class="p">::</span> StackedLine
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-2"></a>   <span class="nc">:title:</span> <span class="nf">'Browser usage evolution (in %)'</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-3"></a>   <span class="nc">:fill:</span> <span class="nf">True</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-4"></a>   <span class="nc">:x_labels:</span> <span class="nf">['2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012']</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-5"></a>   <span class="nc">:width:</span> <span class="nf">600</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-6"></a>   <span class="nc">:height:</span> <span class="nf">400</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-7"></a>   <span class="nc">:explicit_size:</span> <span class="nf">True</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-8"></a>   <span class="nc">:style:</span> <span class="nf">BlueStyle</span>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-9"></a>
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-10"></a>   ('Others',  [14.2, 15.4, 15.3,  8.9,    9, 10.4,  8.9,  5.8,  6.7,  6.8,  7.5])
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-11"></a>   ('IE',      [85.8, 84.6, 84.7, 74.5,   66, 58.6, 54.7, 44.8, 36.2, 26.6, 20.1])
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-12"></a>   ('Firefox', [None, None, None, 16.6,   25,   31, 36.4, 45.5, 46.3, 42.8, 37.1])
-<a name="rest_code_57bbab1ea52d4117b98a12fa9b4a0ce0-13"></a>   ('Chrome',  [None, None, None, None, None, None,    0,  3.9, 10.8, 23.8, 35.3])
+<pre class="code rest"><a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-1"></a><span class="p">..</span> <span class="ow">chart</span><span class="p">::</span> StackedLine
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-2"></a>   <span class="nc">:title:</span> <span class="nf">'Browser usage evolution (in %)'</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-3"></a>   <span class="nc">:fill:</span> <span class="nf">True</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-4"></a>   <span class="nc">:x_labels:</span> <span class="nf">['2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012']</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-5"></a>   <span class="nc">:width:</span> <span class="nf">600</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-6"></a>   <span class="nc">:height:</span> <span class="nf">400</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-7"></a>   <span class="nc">:explicit_size:</span> <span class="nf">True</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-8"></a>   <span class="nc">:style:</span> <span class="nf">BlueStyle</span>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-9"></a>
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-10"></a>   ('Others',  [14.2, 15.4, 15.3,  8.9,    9, 10.4,  8.9,  5.8,  6.7,  6.8,  7.5])
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-11"></a>   ('IE',      [85.8, 84.6, 84.7, 74.5,   66, 58.6, 54.7, 44.8, 36.2, 26.6, 20.1])
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-12"></a>   ('Firefox', [None, None, None, 16.6,   25,   31, 36.4, 45.5, 46.3, 42.8, 37.1])
+<a name="rest_code_a54fa067f7bb4f5fb5aa8fe41ca78c14-13"></a>   ('Chrome',  [None, None, None, None, None, None,    0,  3.9, 10.8, 23.8, 35.3])
 </pre>
 <div style="text-align: center;"><div class="text-error">In order to use the Chart directive, you must install the "pygal" Python package.</div></div>
 <p>Here's how it works:</p>
@@ -109,23 +78,14 @@ is the label, then comes the data.</li>
 take this example and tweak stuff.</p>
 </div>
     </div>
-    
-
-</article>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer">
-            Contents © 2016         <a href="mailto:iamwh1temark@outlook.com">mark</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+</article><footer id="footer"><p>Contents © 2016         <a href="mailto:iamwh1temark@outlook.com">mark</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
-</div>
-
-
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
+    </section><script src="../../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
 </body>
 </html>

@@ -6,6 +6,14 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://example.com/authors/mark.xml</loc>
+  <lastmod>2016-11-19T15:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/authors/roberto-alsina.xml</loc>
+  <lastmod>2016-11-19T15:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://example.com/categories/blog.xml</loc>
   <lastmod>2016-11-19T06:20:00Z</lastmod>
  </sitemap>
@@ -27,18 +35,18 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/galleries/demo/rss.xml</loc>
-  <lastmod>2016-11-19T06:20:00Z</lastmod>
+  <lastmod>2016-11-20T03:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/galleries/rss.xml</loc>
-  <lastmod>2016-11-19T06:20:00Z</lastmod>
+  <lastmod>2016-11-20T03:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2016-11-19T06:20:00Z</lastmod>
+  <lastmod>2016-11-19T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2016-11-19T06:20:00Z</lastmod>
+  <lastmod>2016-11-20T03:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
