@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>markwh1te (mark)</title><link>https://example.com/</link><description></description><atom:link href="https://example.com/authors/mark.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 19 Nov 2016 15:00:57 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org mode test</title><link>https://example.com/posts/org-mode-test/</link><dc:creator>mark</dc:creator><description>&lt;p&gt;
+这里书写你的文章。
+this test 1
+&lt;/p&gt;</description><guid>https://example.com/posts/org-mode-test/</guid><pubDate>Sat, 19 Nov 2016 11:06:55 GMT</pubDate></item><item><title>hello</title><link>https://example.com/posts/hello/</link><dc:creator>mark</dc:creator><description>&lt;p&gt;在这里书写你的文章。&lt;/p&gt;</description><guid>https://example.com/posts/hello/</guid><pubDate>Sat, 19 Nov 2016 06:24:57 GMT</pubDate></item></channel></rss>

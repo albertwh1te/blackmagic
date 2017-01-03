@@ -5,15 +5,15 @@ import time
 def time_func(func):
     def _wrapper():
         start = time.clock()
-        print start
+        print(start)
         func()
         end = time.clock()
-        print end
+        print(end)
     return _wrapper
 
 @time_func
 def test_it():
-    print "see"
+    print("see")
 
 test_it()
 #  #  test_it = time_func(test_it)

@@ -21,9 +21,6 @@ for i in range(84):
         for w in range(10):
             writer.writerow([title[w].string,time[w].string])
             print(w,title[w].string,time[w].string)
-    
-            
-            
 
 #  print(soup)
 #  #  print(len(cc))

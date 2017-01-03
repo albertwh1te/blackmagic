@@ -1,0 +1,20 @@
+* Org with GTD
+**  Basic Org mode
+*** [[http://orgmode.org/manual][org mode manual]]
+*** emacs open file .org file activate org mode
+*** org is a make up language (like markdown)
+** What is GTD?
+*** GTD meas Getting Things Done.
+*** GTD steps table
+| step     | tips                            | description                                                                                                                                                                                                                                                                                     |
+| CAPTURE  | Collect What Has Your Attention | Use an in-tray, notepad, digital list, or voice recorder to capture everything that has your attention. Little, big, personal and professional—all your to-do’s, projects, things to handle or finish.                                                                                          |
+| CLARIFY  | Process What It Means           | Take everything that you capture and ask: Is it actionable? If no, then trash it, incubate it, or file it as reference. If yes, decide the very next action required. If it will take less than two minutes, do it now. If not, delegate it if you can; or put it on a list to do when you can. |
+| ORGANIZE | Put It Where It Belongs         | Put action reminders on the right lists. For example, create lists for the appropriate categories—calls to make, errands to run, emails to send, etc.                                                                                                                                           |
+| REFELECT | Review Frequently               | Look over your lists as often as necessary to trust your choices about what to do next. Do a weekly review to get clear, get current, and get creative.                                                                                                                                         |
+| ENGAGE   | Simply Do                       | Use your system to take appropriate actions with confidence.                                                                                                                                                                                                                                                                                                |
+
+
+
+
+
+

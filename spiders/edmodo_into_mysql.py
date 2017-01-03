@@ -28,7 +28,7 @@ class Posts(Base):
 
 #  create table
 #  engine = create_engine('sqlite:///edmodo.db')
-engine = create_engine('mysql+mysqldb://root:8354210@127.0.0.1/edmodo',connect_args={'charset':'utf8mb4'})
+engine = create_engine('mysql+mysqldb://root:8354210@127.0.0.1/edmodo', connect_args={'charset':'utf8mb4'})
 Base.metadata.create_all(engine)
 
 
