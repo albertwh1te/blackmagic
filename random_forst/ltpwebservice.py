@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 test response example for ltp server
@@ -42,7 +41,6 @@ None
 
 import requests 
 import xml.etree.ElementTree as ET
-import json
 class LtpWebService():
 
     def __init__(self,host,port):
@@ -103,11 +101,25 @@ class LtpWebService():
                 ret_list.append(word.attrib)
         return ret_list
 
+    def ner(self,text):
+        data = {'s':text,
+                'x':'n',
+                't':'ner'
+                }
+        ret_list = []
+        res = self.__talkServer(data)
+        if res:
+            tree = ET.fromstring(res.content)
+            for word in tree.iter("word"):
+                ret_list.append(word.attrib)
+        return ret_list
+
+
     def split(self,text):
         data = {'s':text,
-        'x':'n',
-        't':'ws'
-        }
+                'x':'n',
+                't':'ws'
+                }
         ret_list = []
         res = self.__talkServer(data)
         if res:
@@ -118,10 +130,5 @@ class LtpWebService():
         return map(lambda x:{'sent':x['cont'],'id':x['id']},[i for i in ret_list])
 
 if __name__ == "__main__":
-    ltps = LtpWebService("http://192.168.50.46",9527)
-    #print ltps.segment(u"对文本进行分词的调用示例如下")
-    #print ltps.postagger(u"ni hao a ")
- #   print ltps.postagger(u"对文本进行分词的调用示例如下")
-    # print ltps.parser(u"你好我是好孩子")
-    print ltps.split(u"你好. 。我是虎塞个， 。我是恨死坏哦")
-#    print ltps.parser("cao ni ma")
+    ltp = LtpWebService("http://192.168.50.46",9527)
+    print ltp.ner("七星彩是什么")

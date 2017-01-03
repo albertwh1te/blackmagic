@@ -17,7 +17,9 @@ class MongoFaker(object):
     def insert(self,db,data):
         return self.__client[db].insert(data)
     # todo
-    # def update(self,)
+    def update(self,db,query,data):
+        return self.__client[db].update(query,data)
+
 
     def randomAq(self,url):
         try:

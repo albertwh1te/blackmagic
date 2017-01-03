@@ -5,6 +5,7 @@ import json
 from utils import headers
 from bs4 import BeautifulSoup
 from datetime import date,timedelta
+import time
 
 
 cookies_jar = requests.get('http://www.haodf.com/', headers=headers).cookies
