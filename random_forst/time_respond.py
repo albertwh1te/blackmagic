@@ -7,9 +7,9 @@ def time_it(func):
     # @wraps
     def _wrapper(*args,**kwargs):
         start_time = time.clock()
-        func(*args,**kwargs)
+        result = func(*args,**kwargs)
         cost_time = start_time - time.clock()
-        return func,cost_time
+        return result,cost_time
     return _wrapper
 
 @time_it
