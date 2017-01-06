@@ -5,5 +5,5 @@ rm .git/hooks/post-commit
 echo "#!/usr/bin/env bash" >> .git/hooks/post-commit
 echo "git push origin master" >> .git/hooks/post-commit
 echo "echo 'push into master'" >> .git/hooks/post-commit
-sudo chmod -x .git/hooks/post-commit
+sudo chmod +x .git/hooks/post-commit
 
