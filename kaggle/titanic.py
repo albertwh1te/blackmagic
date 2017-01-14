@@ -26,9 +26,8 @@ if __name__ == "__main__":
     sex_dummies = pd.get_dummies(train_data['Sex'])
     sex_dummies.columns = ['Male','Female']
     print(sex_dummies)
-    # train_data.join(sex_dummies)
-    train_data = pd.concat([train_data,])
-
+    train_data.join(sex_dummies)
+    # train_data = pd.concat([train_data,sex_dummies])
     # train_data = train_data.drop(['Sex'],axis=1)
 
     print(train_data.head())
