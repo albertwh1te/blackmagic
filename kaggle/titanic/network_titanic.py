@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     # network_pred = model.predict(X_test,batch_size=10,verbose=2)
     network_pred = model.predict_classes(X_test,batch_size=10,verbose=2)
-    print(network_pred)
+    # print(network_pred)
 
     # print(submission.head())
     submission = np.hstack([test_raw['PassengerId'].as_matrix().reshape(418,1),network_pred])
