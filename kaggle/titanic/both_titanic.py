@@ -9,11 +9,12 @@ from keras.models import Sequential
 from keras.layers import Dense,Activation
 # sk learn
 
+# load data
+train_raw = pd.read_csv('data/train.csv')
+test_raw = pd.read_csv('data/test.csv')
+
 
 if __name__ == "__main__":
-    # load data
-    train_raw = pd.read_csv('data/train.csv')
-    test_raw = pd.read_csv('data/test.csv')
 
     # Data Clean Part
 
@@ -111,5 +112,4 @@ if __name__ == "__main__":
     })
     submission.to_csv('logreg_titanic.csv',index=False)
     # print(score)
-    # print(logreg_pred)
-
+    # print(logreg_pred
