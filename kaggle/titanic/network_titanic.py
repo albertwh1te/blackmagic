@@ -46,4 +46,5 @@ if __name__ == "__main__":
     # print(submission.head())
     submission = np.hstack([test_raw['PassengerId'].as_matrix().reshape(418,1),network_pred])
     submission = pd.DataFrame(submission)
+    submission.set_index(["PassengerId","Survived"])
     submission.to_csv('result_network_titanic.csv',index=False)
