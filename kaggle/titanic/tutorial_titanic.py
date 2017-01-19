@@ -54,32 +54,33 @@ if __name__ == '__main__':
     # print(featured_train.head())
     # print(featured_test.head())
 
-    # X_train = featured_train.drop(["PassengerId","Survived"],axis=1)
-    X_train = featured_train.values
-    # Y_train = featured_train["Survived"]
-    # Y_train = featured_train["Survived"]
-    # print(X_train.head())
-    # print(Y_train.head())
+    X_train = featured_train.drop(["PassengerId","Survived"],axis=1)
+    Y_train = featured_train["Survived"]
+    Y_train = featured_train["Survived"]
+    print(X_train.head())
+    print(Y_train.head())
 
-    # X_test = featured_test.drop(["PassengerId"],axis=1)
-    X_test = featured_test.values
-    # print(X_test.head())
+    X_test = featured_test.drop(["PassengerId"],axis=1)
+    # X_test = featured_test.values
+    print(X_test.head())
 
-#svm
-    # from sklearn import svm
-    # # kernel rbf means Gaussian
-    # rbf_svm = svm.SVC(kernel='rbf')
+    from sklearn.model_selection import cross_val_score
+    # svm
+    from sklearn import svm
+    # kernel rbf means Gaussian
+    rbf_svm = svm.SVC(kernel='rbf')
 
-    # rbf_svm.fit(X_train,Y_train)
+    rbf_svm.fit(X_train,Y_train)
     # score = rbf_svm.score(X_train,Y_train)
-    # print(score)
+    score = cross_val_score(rbf_svm,X_train,Y_train,cv=5).mean()
+    print(score)
 
-    # new_pred = rbf_svm.predict(X_test)
-    # submission = pd.DataFrame({
-    #     "PassengerId":featured_test["PassengerId"],
-    #     "Survived":new_pred
-    # })
-    # submission.to_csv('result_svm_new_titanic.csv',index=False)
+    new_pred = rbf_svm.predict(X_test)
+    submission = pd.DataFrame({
+        "PassengerId":featured_test["PassengerId"],
+        "Survived":new_pred
+    })
+    submission.to_csv('result_svm_new_titanic.csv',index=False)
 
 # random forest
 
@@ -89,12 +90,13 @@ if __name__ == '__main__':
         n_estimators=500,
     )
 
-    # RF_clf.fit(X_train,Y_train)
+    RF_clf.fit(X_train,Y_train)
     print(X_train)
-    RF_clf.fit(X_train[0::,1::],X_train[0::,0])
+    # RF_clf.fit(X_train[0::,1::],X_train[0::,0])
 
-    # score = RF_clf.score(X_train,Y_train)
-    # print(score)
+    score = RF_clf.score(X_train,Y_train)
+    score = cross_val_score(RF_clf,X_train,Y_train,cv=5).mean()
+    print(score)
 
     random_forest_pred = RF_clf.predict(X_test)
     # print(random_forest_pred)
@@ -104,4 +106,14 @@ if __name__ == '__main__':
         'Survived':random_forest_pred
     })
     submission.to_csv('random_forest_new_titanic.csv',index=False)
+
+
+# LogisticRegression
+    from sklearn.linear_model import LogisticRegression
+    LR_clf = LogisticRegression()
+    LR_clf.fit(X_train,Y_train)
+    score = cross_val_score(LR_clf,X_train,Y_train,cv=5).mean()
+    print(score)
+
+
 
