@@ -85,7 +85,9 @@ if __name__ == '__main__':
 
     from sklearn.ensemble import RandomForestClassifier
 
-    RF_clf = RandomForestClassifier(n_estimators=100)
+    RF_clf = RandomForestClassifier(
+        n_estimators=500,
+    )
 
     # RF_clf.fit(X_train,Y_train)
     print(X_train)
