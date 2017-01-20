@@ -64,41 +64,108 @@ if __name__ == '__main__':
     # X_test = featured_test.values
     print(X_test.head())
 
+    # Sklearn Part
     from sklearn.model_selection import cross_val_score
+
+
     # svm
     from sklearn import svm
-    # kernel rbf means Gaussian
-    rbf_svm = svm.SVC(kernel='rbf')
 
-    rbf_svm.fit(X_train,Y_train)
+    # set cv
+    from sklearn.model_selection import GridSearchCV,StratifiedShuffleSplit
+    cv = StratifiedShuffleSplit(n_splits=5, test_size=0.2, random_state=42)
+
+    # # train without set
+    # rbf_svm = svm.SVC()
+    # rbf_svm.fit(X_train,Y_train)
+    # score = cross_val_score(rbf_svm,X_train,Y_train,cv=cv).mean()
+    # print(score)
+
+    # # set grid space
+    # C_range = np.logspace(-2, 5, 13)
+    # gamma_range = np.logspace(-9, 3, 13)
+    # param_grid = dict(gamma=gamma_range, C=C_range)
+
+    # # find parameter
+    # grid = GridSearchCV(svm.SVC(), param_grid=param_grid, cv=cv,n_jobs=3,verbose=2)
+    # print('start')
+    # grid.fit(X_train,Y_train)
+    # print("The best parameters are %s with a score of %0.2f"
+    #   % (grid.best_params_, grid.best_score_))
+
+    # rbf_svm_new = svm.SVC(**grid.best_params_)
+    # rbf_svm_new.fit(X_train,Y_train)
+    # score = cross_val_score(rbf_svm_new,X_train,Y_train,cv=cv).mean()
+    # print(score)
+
+
+
     # score = rbf_svm.score(X_train,Y_train)
-    score = cross_val_score(rbf_svm,X_train,Y_train,cv=5).mean()
-    print(score)
 
-    new_pred = rbf_svm.predict(X_test)
-    submission = pd.DataFrame({
-        "PassengerId":featured_test["PassengerId"],
-        "Survived":new_pred
-    })
-    submission.to_csv('result_svm_new_titanic.csv',index=False)
+    # new_pred = rbf_svm_new.predict(X_test)
+    # submission = pd.DataFrame({
+    #     "PassengerId":featured_test["PassengerId"],
+    #     "Survived":new_pred
+    # })
+    # submission.to_csv('result_svm_new_titanic.csv',index=False)
 
 # random forest
 
     from sklearn.ensemble import RandomForestClassifier
 
+#     rf_params = {
+#     'n_jobs': -1,
+#     'n_estimators': 500,
+#      'warm_start': True,
+#      #'max_features': 0.2,
+#     'max_depth': 6,
+#     'min_samples_leaf': 2,
+#     'max_features' : 'sqrt',
+#     'verbose': 3
+# }
+    #origin model
     RF_clf = RandomForestClassifier(
-        n_estimators=500,
+        # n_estimators=500,
+        # **rf_params
     )
 
     RF_clf.fit(X_train,Y_train)
-    print(X_train)
+    # print(X_train)
     # RF_clf.fit(X_train[0::,1::],X_train[0::,0])
 
     score = RF_clf.score(X_train,Y_train)
     score = cross_val_score(RF_clf,X_train,Y_train,cv=5).mean()
     print(score)
 
+
+    #paramers search
+    n_estimators = [1000]
+    criterion = ['gini','entropy']
+    max_features = np.logspace(-2,0,50)
+    param_grid = dict(
+        n_estimators=n_estimators,
+        max_features=max_features,
+        criterion=criterion
+    )
+    grid = GridSearchCV(
+        RandomForestClassifier(),
+        param_grid=param_grid,
+        cv=cv,
+        n_jobs=3,
+        verbose=2
+    )
+    grid.fit(X_train,Y_train)
+    print("The best parameters are %s with a score of %0.2f"
+      % (grid.best_params_, grid.best_score_))
+
+    RF_clf = RandomForestClassifier(
+        n_jobs=3,
+        **grid.best_params_
+    )
+    RF_clf.fit(X_train,Y_train)
     random_forest_pred = RF_clf.predict(X_test)
+    score = cross_val_score(RF_clf,X_train,Y_train,cv=cv).mean()
+    print(score)
     # print(random_forest_pred)
 
     submission = pd.DataFrame({
@@ -108,12 +175,12 @@ if __name__ == '__main__':
     submission.to_csv('random_forest_new_titanic.csv',index=False)
 
 
-# LogisticRegression
-    from sklearn.linear_model import LogisticRegression
-    LR_clf = LogisticRegression()
-    LR_clf.fit(X_train,Y_train)
-    score = cross_val_score(LR_clf,X_train,Y_train,cv=5).mean()
-    print(score)
+# # LogisticRegression
+#     from sklearn.linear_model import LogisticRegression
+#     LR_clf = LogisticRegression()
+#     LR_clf.fit(X_train,Y_train)
+#     score = cross_val_score(LR_clf,X_train,Y_train,cv=5).mean()
+#     print(score)
 
 
 
