@@ -24,6 +24,7 @@ def harmonize_data(titanic):
 
 def create_submission(alg, train, test, predictors, filename):
 
+    print(train)
     alg.fit(train[predictors], train["Survived"])
     predictions = alg.predict(test[predictors])
 
