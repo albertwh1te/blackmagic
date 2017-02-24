@@ -35,11 +35,15 @@ test_data["Age"].fillna(test_data["Age"].median(), inplace=True)
 test_data["Fare"].fillna(test_data["Fare"].median(), inplace=True)
 
 # declare X and Y train data
-X_train = train_data.drop(['Survived'],axis=1).as_matrix()
-Y_train = train_data['Survived'].as_matrix()
+X_train = train_data.drop(['Survived'],axis=1).as_matrix()[:-100]
+Y_train = train_data['Survived'].as_matrix()[:-100]
 
-# declare X test data
-X_test = test_data.as_matrix()
+# declare X and Y test data
+X_test = train_data.drop(['Survived'],axis=1).as_matrix()[-100:]
+Y_test = train_data['Survived'].as_matrix()[-100:]
+
+# declare X predication data
+X_pred = test_data.as_matrix()
 
 if __name__ == "__main__":
     print(train_data.head())
