@@ -28,6 +28,7 @@ test_data = test_data.join(sex_dummies_test).drop(['Sex'],axis=1)
 
 # set None age
 train_data["Age"].fillna(train_data["Age"].median(), inplace=True)
+
 test_data["Age"].fillna(test_data["Age"].median(), inplace=True)
 
 # set None data in test data("Fare")

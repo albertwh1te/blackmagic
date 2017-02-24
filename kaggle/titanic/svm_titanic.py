@@ -22,5 +22,5 @@ if __name__ == "__main__":
         'PassengerId':test_raw['PassengerId'],
         'Survived':rbf_svm_pred
     })
-    submission.to_csv('rbf_svm_titanic.csv',index=False)
+    submission.to_csv('result_svm_titanic.csv',index=False)
 
