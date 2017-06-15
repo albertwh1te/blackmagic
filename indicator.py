@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # this program is used for stock indicator based on talib and PyAlgoTrade where independent of PAT
 # we just refer to the idea that PAT indicator developed with talib
-# all right reserved by huaxi.zhou,anyone can not use this program without the author's permition 
 
 """
 Created on Wed Mar 29 09:14:13 2017
