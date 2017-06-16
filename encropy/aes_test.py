@@ -4,6 +4,7 @@ import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
 
+
 class AESCipher(object):
 
     def __init__(self, key):
@@ -11,7 +12,6 @@ class AESCipher(object):
         self.key = hashlib.sha256(key.encode()).digest()
 
     def encrypt(self, raw):
-        import ipdb; ipdb.set_trace()
         raw = self._pad(raw)
         iv = Random.new().read(AES.block_size)
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
@@ -31,9 +31,15 @@ class AESCipher(object):
         return s[:-ord(s[len(s)-1:])]
 
 if __name__ == '__main__':
-    cipher = AESCipher('test')
-    # plain_test = "this is a test 1: 上九潜龙勿用"
-    plain_text = "this is a long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long text"
-    encrypted = cipher.encrypt(plain_text)
-    text = cipher.decrypt(encrypted)
-    print(text)
+    import time
+    start_time = time.time()
+    for i in range(1000):
+        cipher = AESCipher('test')
+        # plain_test = "this is a test 1: 上九潜龙勿用"
+        plain_text = "this is a long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long text"
+        encrypted = cipher.encrypt(plain_text)
+        text = cipher.decrypt(encrypted)
+        print(text)
+    end_timed = time.time()
+    print(end_timed - start_time)
+
