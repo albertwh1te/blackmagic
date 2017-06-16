@@ -8,7 +8,7 @@ class BaseCipher(object):
 
     def __init__(self,key,cipher):
         self.block_size = cipher.block_size
-        self.key = key
+        self.key = hashlib.sha256(key.encode()).digest()
         # cipher object crypto
         self.cipher = cipher
         # true crypter for use
@@ -40,7 +40,8 @@ def cipher_factory(key,cipher_name):
         return BaseCipher(key,AES)
 
 if __name__ == '__main__':
-    cipher = cipher_factory('test',"AES")
+    # cipher = cipher_factory('test',"AES")
+    cipher = cipher_factory('test',"Blowfish")
     plain_text = "this is a long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long text"
     encrypted = cipher.encrypt(plain_text)
     text = cipher.decrypt(encrypted)

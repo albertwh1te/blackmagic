@@ -4,11 +4,10 @@ import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
 
-
 class AESCipher(object):
 
     def __init__(self, key):
-        self.bs = 32
+        self.bs = AES.block_size
         self.key = hashlib.sha256(key.encode()).digest()
 
     def encrypt(self, raw):
