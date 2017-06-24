@@ -78,14 +78,14 @@ if __name__ == "__main__":
     model.fit(X_train, Y_train, nb_epoch=150, batch_size=10, verbose=2)
 
     # elvalue model
-    loss,accuracy = model.evaluate(X_train,Y_train,verbose=2)
+    # loss,accuracy = model.evaluate(X_train,Y_train,verbose=2)
+    loss,accuracy = model.evaluate(X_test,Y_test,verbose=2)
 
     # show accuracy
     print(accuracy)
 
     # network_pred = model.predict(X_test,batch_size=10,verbose=2)
-    network_pred = model.predict_classes(X_test,batch_size=10,verbose=2)
-    print(network_pred)
+    # print(network_pred)
 
     # print(type(network_pred))
     # print(submission.head())
