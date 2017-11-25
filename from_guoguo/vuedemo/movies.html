@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>movies show</title>
+</head>
+<body>
+    <div id="app">
+            <nav>
+                    <div class="nav-wrapper">
+                      <a href="#" class="brand-logo">top movies</a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                        
+    <div class="el-row container ">
+            <el-table :data="movies" class="el-col el-col-24">
+                    <el-table-column type="expand">
+                            <template slot-scope="props">
+                              <el-form label-position="left" inline>
+                              <!-- <el-form label-position="left" inline class="demo-table-expand"> -->
+                                <el-form-item label="类型">
+                                  <span>{{ props.row.genres.slice(-1)[0] }}</span>
+                                </el-form-item>
+                                <el-form-item label="导演">
+                                  <span>{{ props.row.directors[0].name }}</span>
+                                </el-form-item>
+                                <el-form-item >
+                                  <img :src="props.row.images.small">
+                                </el-form-item>
+                              </el-form>
+                            </template>
+                          </el-table-column>
+                    <el-table-column
+                    prop="title"
+                    label="电影名称">
+                  </el-table-column>
+                    <el-table-column
+                    prop="original_title"
+                    label="原名">
+                  </el-table-column>
+                    <el-table-column
+                    prop="rating.average"
+                    label="评分"
+                    >
+                  </el-table-column>
+                    <el-table-column
+                    prop="year"
+                    label="上映时间"
+                    >
+                  </el-table-column>
+            </el-table>
+        </div>
+      <div>
+</body>
+<script src="js/vue.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/axio.min.js"></script>
+
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<script src="js/movie.js"></script>
+<!
+</html>
