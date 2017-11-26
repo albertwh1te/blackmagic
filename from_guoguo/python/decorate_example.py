@@ -12,8 +12,8 @@ def time_cost(func):
 @time_cost
 def test_func(time=None):
     sum = 0
-    for i in range(1000):
-        sum += i
+    for i in range(100000):
+        sum *= i
     print(sum)
 
 if __name__ == "__main__":
